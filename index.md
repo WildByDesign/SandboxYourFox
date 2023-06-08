@@ -28,10 +28,20 @@
 ### ACLs:
 
 ```
-test
+C:\AppContainer
+C:\Users\{your-user-name}\AppData\Local\Mozilla
+C:\Users\{your-user-name}\AppData\LocalLow\Mozilla
+C:\Users\{your-user-name}\AppData\Roaming\Mozilla
 ```
+_* replace {your-user-name} with the username and directory structure on your system_
+
+Add steps to set ACLs
+
+Add screenshot as well
 
 ### user.js:
+
+The `user.js` file is included in `C:\AppContainer\Firefox\profile` which is critical because the Firefox AppContainer will crash without these settings. I copied the `user.js` below for descriptive purposes.
 
 ```javascript
 /******************************************************************************
