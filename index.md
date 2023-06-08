@@ -2,7 +2,7 @@
 ## Less Privileged AppContainer (LPAC) Sandbox for Firefox
 ### _Pure AppContainer | No AppSilo | Faster Firefox | Zero Calories_
 
-![Sandbox Your Fox](https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/SandboxYourFox.png)
+<img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/SandboxYourFox.png" alt="Sandbox Your Fox" width="75%" height="75%">
 
 ### What You Get:
 
@@ -41,8 +41,8 @@ _* replace {your-user-name} with the username and directory structure on your sy
 - Click Launch to launch `cmd` or `notepad` as AppContainer which will apply your ACLs
 
 Example screenshot:
-![AppExec](https://github.com/WildByDesign/SandboxYourFox/assets/26308319/7a83475c-45de-4a74-a372-7b3eb4ca1d3f)
 
+<img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/AppExec.png" alt="AppExec" width="75%" height="75%">
 
 ### user.js:
 
