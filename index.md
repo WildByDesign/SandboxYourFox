@@ -33,7 +33,7 @@ test
 
 ### user.js:
 
-```
+```javascript
 /******************************************************************************
  *  AppContainer (LPAC) for Firefox - user.js                                 *
  *                                                                            *
