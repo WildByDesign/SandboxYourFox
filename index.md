@@ -35,9 +35,14 @@ C:\Users\{your-user-name}\AppData\Roaming\Mozilla
 ```
 _* replace {your-user-name} with the username and directory structure on your system_
 
-Add steps to set ACLs
+- Run AppExec from `C:\AppContainer\AppExec\AppExec.exe`
+- Copy and Paste ACLs _(change to your user name / directory structure)_
+- Under Programs and Arguments, type `cmd` or `notepad`
+- Click Launch to launch `cmd` or `notepad` as AppContainer which will apply your ACLs
 
-Add screenshot as well
+Example screenshot:
+![AppExec](https://github.com/WildByDesign/SandboxYourFox/assets/26308319/7a83475c-45de-4a74-a372-7b3eb4ca1d3f)
+
 
 ### user.js:
 
