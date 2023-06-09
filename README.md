@@ -21,6 +21,7 @@
 
 ### Requirements:
 
+- Extract the archive as `C:\AppContainer` to match script
 - You absolutely must set ACL permimssions first _(see ACL section below)_
 - The `user.js` file in profile will copy important settings to `prefs.js` on first start _(see user.js section below)_
 - Firefox installed in the default location: `C:\Program Files\Mozilla Firefox\firefox.exe`
