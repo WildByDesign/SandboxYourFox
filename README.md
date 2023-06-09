@@ -2,7 +2,7 @@
 ## Less Privileged AppContainer (LPAC) Sandbox for Firefox
 ### _Pure AppContainer | No AppSilo | Faster Firefox | Zero Calories_
 
-<img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/SandboxYourFox.png" alt="Sandbox Your Fox" width="75%" height="75%">
+<img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/SandboxYourFox.png" alt="Sandbox Your Fox">
 
 ### What You Get:
 
@@ -39,11 +39,12 @@ _* replace {your-user-name} with the username and directory structure on your sy
 - Run AppExec from `C:\AppContainer\AppExec\AppExec.exe`
 - Copy and Paste ACLs _(change to your user name / directory structure)_
 - Under Programs and Arguments, type `cmd` or `notepad`
-- Click Launch to launch `cmd` or `notepad` as AppContainer which will apply your ACLs
+- Click Launch to start `cmd` or `notepad` as AppContainer which will apply your ACLs
+- You only need to set the ACLs once
 
 Example screenshot:
 
-<img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/AppExec.png" alt="AppExec" width="75%" height="75%">
+<img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/AppExec.png" alt="AppExec">
 
 ### user.js:
 
@@ -84,6 +85,6 @@ user_pref("network.process.enabled", false);
 ```batch
 C:\AppContainer\AppExec\wsudo.exe --appcontainer --lpac --verbose --disable-alias --env "MOZ_FORCE_DISABLE_E10S=114.0" --appid "AppContainer.Launcher" --appx "C:\AppContainer\AppExec\capabilities.xml" "C:\Program Files\Mozilla Firefox\firefox.exe" -profile "C:\AppContainer\Firefox\profile" -private
 ```
-* NOTE: The `MOZ_FORCE_DISABLE_E10S=114.0` line has to be changed with each release of Firefox or else the AppContainer will crash. (eg. 114.0, 114.0.1, etc.)
+* NOTE: The `MOZ_FORCE_DISABLE_E10S=114.0.1` line has to be changed with each release of Firefox or else the AppContainer will crash. (eg. 114.0, 114.0.1, etc.)
 
 You can run that wsudo command from the Command Prompt/Terminal or create a shortcut.
