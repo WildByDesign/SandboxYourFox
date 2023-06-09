@@ -76,3 +76,13 @@ user_pref("media.utility-process.enabled", false);
 user_pref("network.process.enabled", false);
 
 ```
+
+
+### wsudo:
+
+```batch
+C:\AppContainer\AppExec\wsudo.exe --appcontainer --lpac --verbose --disable-alias --env "MOZ_FORCE_DISABLE_E10S=114.0" --appid "AppContainer.Launcher" --appx "C:\AppContainer\AppExec\capabilities.xml" "C:\AppContainer\Firefox\bin\firefox.exe" -profile "C:\AppContainer\Firefox\profile" -private
+```
+* NOTE: The `MOZ_FORCE_DISABLE_E10S=114.0` line has to be changed with each release of Firefox or else the AppContainer will crash. (eg. 114.0, 114.0.1, etc.)
+
+You can run that wsudo command from the Command Prompt/Terminal or create a shortcut.
