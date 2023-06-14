@@ -24,73 +24,19 @@ This runs as a portable version of Firefox within an AppContainer (LPAC) with it
 - Firefox Sync does not work
 
 
-### Requirements:
+### Important Setup Instructions:
 
-- Extract the archive as `C:\AppContainer` to match script
-- You absolutely must set ACL permimssions first _(see ACL section below)_
-- The `user.js` file in profile will copy important settings to `prefs.js` on first start _(see user.js section below)_
-- Firefox installed in the default location: `C:\Program Files\Mozilla Firefox\firefox.exe`
-
-
-### ACLs:
-
-```
-C:\AppContainer
-C:\Users\{your-user-name}\AppData\Local\Mozilla
-C:\Users\{your-user-name}\AppData\LocalLow\Mozilla
-C:\Users\{your-user-name}\AppData\Roaming\Mozilla
-```
-_* replace {your-user-name} with the username and directory structure on your system_
-
-- Run AppExec from `C:\AppContainer\AppExec\AppExec.exe`
-- Copy and Paste ACLs _(change to your user name / directory structure)_
-- Under Programs and Arguments, type `cmd` or `notepad`
-- Click Launch to start `cmd` or `notepad` as AppContainer which will apply your ACLs
-- You only need to set the ACLs once
-
-Example screenshot:
-
-<img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/AppExec.png" alt="AppExec">
-
-### user.js:
-
-The `user.js` file is included in `C:\AppContainer\Firefox\profile` which is critical because the Firefox AppContainer will crash without these settings. I copied the `user.js` below for descriptive purposes.
-
-```javascript
-/******************************************************************************
- *  AppContainer (LPAC) for Firefox - user.js                                 *
- *                                                                            *
- *  The purpose here is to disable settings which can spawn additional        *
- *  firefox.exe processes which would cause the sandbox to crash.             *
- ******************************************************************************/
-
-// Set Downloads Directory
-user_pref("browser.download.dir", "C:\\AppContainer\\Downloads");
-// Disable Launcher Process
-user_pref("browser.launcherProcess.enabled", false);
-// Disable New Process
-user_pref("dom.noopener.newprocess.enabled", false);
-// Disable VR Process
-user_pref("dom.vr.process.enabled", false);
-// Disable geo-location as it spawns WindowsUtils utility process
-user_pref("geo.provider.ms-windows-location", false);
-// Disable GPU Process
-user_pref("layers.gpu-process.enabled", false);
-// Disable Media RDD Process
-user_pref("media.rdd-process.enabled", false);
-// Disable Media Utility Process
-user_pref("media.utility-process.enabled", false);
-// Disable Network Process
-user_pref("network.process.enabled", false);
-
-```
-
-
-### wsudo:
-
+- Create the directory `C:\AppContainer`
+- Extract the 7z archive from Releases into the `C:\AppContainer` directory
+- Directory structure absolutely must be as follows:
 ```batch
-C:\AppContainer\AppExec\wsudo.exe --appcontainer --lpac --verbose --disable-alias --env "MOZ_FORCE_DISABLE_E10S=114.0" --appid "AppContainer.Launcher" --appx "C:\AppContainer\AppExec\capabilities.xml" "C:\Program Files\Mozilla Firefox\firefox.exe" -profile "C:\AppContainer\Firefox\profile" -private
+C:\AppContainer
+   ├───AppExec
+   ├───Downloads
+   └───Firefox
+       ├───bin
+       └───profile
 ```
-* NOTE: The `MOZ_FORCE_DISABLE_E10S=114.0.1` line has to be changed with each release of Firefox or else the AppContainer will crash. (eg. 114.0, 114.0.1, etc.)
-
-You can run that wsudo command from the Command Prompt/Terminal or create a shortcut.
+- There is a `user.js` file in the `profile` folder which is absolutely critical for running as AppContainer
+- Before first run, you must run `SetACLs.bat` to set the AppContainer ACLs _(you only need to do this once)_
+- Now you can run Firefox in AppContainer by running `firefox.bat` or the included Firefox shortcut
