@@ -1,8 +1,13 @@
 # Sandbox Your Fox
 ## Less Privileged AppContainer (LPAC) Sandbox for Firefox
-### _Pure AppContainer | No AppSilo | Faster Firefox | Zero Calories_
+### _Pure AppContainer Isolation | No AppSilo | Faster Firefox | Secure Firefox | Portable Firefox_
 
 <img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/SandboxYourFox.png" alt="Sandbox Your Fox">
+* Yes, that is Process Explorer running in an AppContainer as well, showing only AppContainer processes.
+
+### Summary:
+
+This runs as a portable version of Firefox within an AppContainer (LPAC) with it's own profile. Therefore, you can play around with this and test it without affecting your regular Firefox installation or your regular profile.
 
 ### What You Get:
 
