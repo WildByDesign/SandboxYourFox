@@ -22,6 +22,7 @@ This runs as a portable version of Firefox within an AppContainer (LPAC) with it
 - Regular browsing mode crashes due to Shared Web Content process
 - DRM components fail _(no Netflix, Disney Plus, etc.)_
 - Firefox Sync does not work
+- Picture-in-Picture Mode (causes Firefox to crash)
 
 
 ### Important Setup Instructions:
