@@ -14,6 +14,7 @@ This runs as a portable version of Firefox within an AppContainer (LPAC) with it
 - Firefox running in a secure AppContainer _(LPAC)_ sandbox
 - Firefox running in single process mode _(E10s/Fission disabled)_
 - Firefox running in Private Browsing Mode
+- Firefox EME-free (no DRM)
 
 
 ### What You Don't Get:
