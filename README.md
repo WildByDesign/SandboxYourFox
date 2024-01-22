@@ -23,6 +23,8 @@ This runs as a portable version of Firefox within an AppContainer (LPAC) with it
 - DRM components fail _(no Netflix, Disney Plus, etc.)_
 - Firefox Sync does not work
 - Picture-in-Picture Mode (causes Firefox to crash)
+- Built-in Translations feature (causes Firefox to crash)
+- More troubleshooting information (about:support) crashes on 122
 
 
 ### Important Setup Instructions:
