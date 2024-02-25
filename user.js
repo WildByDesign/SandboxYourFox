@@ -39,3 +39,11 @@ user_pref("browser.privateWindowSeparation.enabled", false);
 user_pref("browser.translations.automaticallyPopup", false);
 user_pref("browser.translations.enable", false);
 user_pref("browser.translations.panelShown", false);
+// more
+user_pref("browser.tabs.remote.separatePrivilegedContentProcess", false);
+user_pref("browser.tabs.remote.separatePrivilegedMozillaWebContentProcess", false);
+user_pref("dom.ipc.keepProcessesAlive.privilegedabout", 0);
+user_pref("dom.ipc.processCount.privilegedabout", 0);
+user_pref("dom.ipc.processCount.privilegedmozilla", 0);
+// Fix Cloudflare Turnstile crashes
+user_pref("browser.tabs.remote.useCrossOriginOpenerPolicy", false);
