@@ -1,5 +1,0 @@
-! Disable SharedWorkers - SharedWorkers cause crash when MOZ_FORCE_DISABLE_E10S is used
-! Reference - https://github.com/arkenfox/user.js/issues/1180#issuecomment-850854220
-! Particularly, SandboxYourFox will crash on GitHub when logged into GitHub
-! This is a workaround to avoid the SharedWorker crash
-*##+js(set, SharedWorker, noopFunc)
