@@ -130,7 +130,6 @@
 	"adguard-generic": {
 		"content": "filters",
 		"group": "ads",
-		"off": true,
 		"title": "AdGuard – Ads",
 		"tags": "ads",
 		"contentURL": "https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt",
@@ -151,7 +150,6 @@
 	"easylist": {
 		"content": "filters",
 		"group": "ads",
-		"off": true,
 		"title": "EasyList",
 		"tags": "ads",
 		"contentURL": [
@@ -219,6 +217,7 @@
 	"urlhaus-1": {
 		"content": "filters",
 		"group": "malware",
+		"off": true,
 		"title": "Online Malicious URL Blocklist",
 		"contentURL": [
 			"https://malware-filter.gitlab.io/urlhaus-filter/urlhaus-filter-ag-online.txt",
@@ -248,7 +247,6 @@
 		"content": "filters",
 		"group": "annoyances",
 		"parent": "AdGuard – Annoyances",
-		"off": true,
 		"title": "AdGuard – Social Media",
 		"tags": "annoyances social",
 		"contentURL": "https://filters.adtidy.org/extension/ublock/filters/4.txt",
@@ -259,7 +257,6 @@
 		"content": "filters",
 		"group": "annoyances",
 		"parent": "AdGuard – Annoyances|AdGuard/uBO – Cookie Notices",
-		"off": true,
 		"title": "AdGuard – Cookie Notices",
 		"tags": "annoyances cookies",
 		"contentURL": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
@@ -286,7 +283,6 @@
 		"content": "filters",
 		"group": "annoyances",
 		"parent": "AdGuard – Annoyances",
-		"off": true,
 		"title": "AdGuard – Popup Overlays",
 		"tags": "annoyances",
 		"contentURL": "https://filters.adtidy.org/extension/ublock/filters/19.txt",
@@ -477,7 +473,7 @@
 	"sandboxyourfox": {
 		"content": "filters",
 		"group": "multipurpose",
-		"title": "SandboxYourFox Workers",
+		"title": "SandboxYourFox Workers Fix",
 		"tags": "SandboxYourFox Workers",
 		"contentURL": "https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/DisableWorkers.txt",
 		"supportURL": "https://github.com/WildByDesign/SandboxYourFox/"
