@@ -3,14 +3,7 @@
 		"content": "internal",
 		"updateAfter": 13,
 		"contentURL": [
-			"https://raw.githubusercontent.com/gorhill/uBlock/master/assets/assets.json",
-			"assets/assets.json"
-		],
-		"cdnURLs": [
-			"https://ublockorigin.github.io/uAssetsCDN/ublock/assets.json",
-			"https://ublockorigin.pages.dev/ublock/assets.json",
-			"https://cdn.jsdelivr.net/gh/gorhill/uBlock@master/assets/assets.json",
-			"https://cdn.statically.io/gh/gorhill/uBlock/master/assets/assets.json"
+			"https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/assets.json"
 		]
 	},
 	"public_suffix_list.dat": {
@@ -38,6 +31,7 @@
 	"ublock-filters": {
 		"content": "filters",
 		"group": "default",
+		"off": true,
 		"parent": "uBlock filters",
 		"title": "uBlock filters – Ads",
 		"tags": "ads",
@@ -57,6 +51,7 @@
 	"ublock-badware": {
 		"content": "filters",
 		"group": "default",
+		"off": true,
 		"parent": "uBlock filters",
 		"title": "uBlock filters – Badware risks",
 		"tags": "malware security",
@@ -77,6 +72,7 @@
 	"ublock-privacy": {
 		"content": "filters",
 		"group": "default",
+		"off": true,
 		"parent": "uBlock filters",
 		"title": "uBlock filters – Privacy",
 		"tags": "privacy",
@@ -96,6 +92,7 @@
 	"ublock-unbreak": {
 		"content": "filters",
 		"group": "default",
+		"off": true,
 		"parent": "uBlock filters",
 		"title": "uBlock filters – Unbreak",
 		"contentURL": [
@@ -114,6 +111,7 @@
 	"ublock-quick-fixes": {
 		"content": "filters",
 		"group": "default",
+		"off": true,
 		"parent": "uBlock filters",
 		"title": "uBlock filters – Quick fixes",
 		"contentURL": [
@@ -153,6 +151,7 @@
 	"easylist": {
 		"content": "filters",
 		"group": "ads",
+		"off": true,
 		"title": "EasyList",
 		"tags": "ads",
 		"contentURL": [
@@ -203,6 +202,7 @@
 	"easyprivacy": {
 		"content": "filters",
 		"group": "privacy",
+		"off": true,
 		"title": "EasyPrivacy",
 		"tags": "privacy",
 		"contentURL": [
@@ -496,6 +496,7 @@
 		"content": "filters",
 		"group": "multipurpose",
 		"updateAfter": 13,
+		"off": true,
 		"title": "Peter Lowe’s Ad and tracking server list",
 		"tags": "ads privacy security",
 		"contentURL": [
