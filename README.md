@@ -20,7 +20,7 @@ This runs as a portable version of Firefox within an AppContainer (LPAC) with it
 ### What You Don't Get:
 
 - Updates fail and must be done outside of AppContainer
-- Regular browsing mode crashes due to Shared Web Content process ([workaround](https://github.com/WildByDesign/SandboxYourFox/edit/main/README.md#regular-browsing-mode))
+- Regular browsing mode crashes due to Shared Web Content process ([workaround](https://github.com/WildByDesign/SandboxYourFox?tab=readme-ov-file#regular-browsing-mode))
 - DRM components fail _(no Netflix, Disney Plus, etc.)_
 - Firefox Sync does not work
 - Picture-in-Picture Mode (causes Firefox to crash)
