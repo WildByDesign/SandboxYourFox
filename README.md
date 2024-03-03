@@ -44,6 +44,16 @@ C:\AppContainer
 - There is a `user.js` file in the `profile` folder which is absolutely critical for running as AppContainer
 - Before first run, you must run `SetACLs.bat` to set the AppContainer ACLs _(you only need to do this once)_
 - Now you can run Firefox in AppContainer by running `firefox.bat` or the included Firefox shortcut
+- For additional security, you can also apply Process Mitigations (below).
+
+
+### Apply Process Mitigations:
+
+- Process Mitigations can be applied with the included `ProcessMitigations.xml` and `SetProcessMitigations.bat` files
+- Simply run `SetProcessMitigations.bat` which will request Admin and apply the process mitgations
+- These process mitigations will NOT affect your installed version of Firefox (if you have Firefox installed)
+- Most of the process mitigations that Firefox applies to their content processes [Firefox Sandbox](https://wiki.mozilla.org/Security/Sandbox#Content) are applied
+- In addition, I have applied the [Disable Child Processes](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/exploit-protection-reference?view=o365-worldwide#dont-allow-child-processes) mitigation since SandboxYourFox is single-process only
 
 
 ### Regular Browsing Mode:
