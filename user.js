@@ -47,3 +47,4 @@ user_pref("dom.ipc.processCount.privilegedabout", 0);
 user_pref("dom.ipc.processCount.privilegedmozilla", 0);
 // Fix Cloudflare Turnstile crashes
 user_pref("browser.tabs.remote.useCrossOriginOpenerPolicy", false);
+user_pref("browser.tabs.remote.useCrossOriginEmbedderPolicy", false);
