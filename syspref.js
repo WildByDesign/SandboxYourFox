@@ -1,5 +1,5 @@
 /******************************************************************************
- *  AppContainer (LPAC) for Firefox - user.js                                 *
+ *  AppContainer (LPAC) for Firefox - syspref.js                              *
  *                                                                            *
  *  The purpose here is to disable settings which can spawn additional        *
  *  firefox.exe processes which would cause the sandbox to crash.             *
