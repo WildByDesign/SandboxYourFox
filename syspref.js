@@ -1,5 +1,5 @@
 /******************************************************************************
- *  AppContainer (LPAC) for Firefox - syspref.js                              *
+ *  AppContainer (LPAC) for Firefox - user.js                                 *
  *                                                                            *
  *  The purpose here is to disable settings which can spawn additional        *
  *  firefox.exe processes which would cause the sandbox to crash.             *
@@ -39,12 +39,12 @@ pref("browser.privateWindowSeparation.enabled", false, locked);
 pref("browser.translations.automaticallyPopup", false, locked);
 pref("browser.translations.enable", false, locked);
 pref("browser.translations.panelShown", false, locked);
-// more
+// Prevent additional processes
 pref("browser.tabs.remote.separatePrivilegedContentProcess", false, locked);
 pref("browser.tabs.remote.separatePrivilegedMozillaWebContentProcess", false, locked);
 pref("dom.ipc.keepProcessesAlive.privilegedabout", 0, locked);
 pref("dom.ipc.processCount.privilegedabout", 0, locked);
 pref("dom.ipc.processCount.privilegedmozilla", 0, locked);
 // Fix Cloudflare Turnstile crashes
-pref("browser.tabs.remote.useCrossOriginOpenerPolicy", false, locked);
-pref("browser.tabs.remote.useCrossOriginEmbedderPolicy", false, locked);
+//pref("browser.tabs.remote.useCrossOriginOpenerPolicy", false, locked);
+//pref("browser.tabs.remote.useCrossOriginEmbedderPolicy", false, locked);
