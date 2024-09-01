@@ -1,9 +1,21 @@
 # Sandbox Your Fox
 ## Less Privileged AppContainer (LPAC) Sandbox for Firefox
-### _Pure AppContainer Isolation | No AppSilo | Faster Firefox | Secure Firefox | Portable Firefox_
+### _AppContainer Isolation | Faster Firefox | Secure Firefox_
 
-<img src="https://raw.githubusercontent.com/WildByDesign/SandboxYourFox/main/SandboxYourFox.png" alt="Sandbox Your Fox">
-* Yes, that is Process Explorer running in an AppContainer as well, showing only AppContainer processes.
+### Important Changes in 130.0.0 supersedes some info on this README:
+
+- Custom-made Installer and Uninstaller for easy testing and smooth upgrades
+- Changed directories for binaries and profile for better ACL management:
+  - Binaries are installed to: `%PROGRAMFILES%\SandboxYourFox`
+  - Profile directory: `%LOCALAPPDATA%\Packages\appcontainer.launcher\AC\Profile`
+  - Downloads directory: `%LOCALAPPDATA%\Packages\appcontainer.launcher\AC\Downloads`
+- Submitted a [patch](https://phabricator.services.mozilla.com/D218999) upstream to make future builds easier
+- Switched from [wsudo](https://github.com/M2Team/Privexec/tree/master/wsudo) to Microsoft's [LaunchAppContainer](https://github.com/microsoft/SandboxSecurityTools)
+- Fixed a crash on the `about:support` page
+- ACLs are set which give permission specifically to container `appcontainer.launcher` for:
+  - `%APPDATA%\Mozilla`
+  - `%LOCALAPPDATA%\Mozilla`
+  - `HKEY_CURRENT_USER\Software\Mozilla`
 
 ### Summary:
 
