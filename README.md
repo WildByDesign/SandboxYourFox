@@ -19,7 +19,7 @@
 
 ### Summary:
 
-This runs as a portable version of Firefox within an AppContainer (LPAC) with it's own profile. Therefore, you can play around with this and test it without affecting your regular Firefox installation or your regular profile.
+This runs Firefox within an AppContainer (LPAC) with it's own profile that is contained separately from any other Firefox profile that you may already have. Therefore, you can play around with this and test it without affecting your regular Firefox installation or your regular profile.
 
 ### What You Get:
 
@@ -31,45 +31,16 @@ This runs as a portable version of Firefox within an AppContainer (LPAC) with it
 
 ### What You Don't Get:
 
-- Updates fail and must be done outside of AppContainer
+- No updates except from here (since `MOZ_FORCE_DISABLE_E10S` requires `MOZILLA_OFFICIAL` to not be set, meaning has to be unofficial build)
 - Regular browsing mode crashes due to Shared Web Content process ([workaround](https://github.com/WildByDesign/SandboxYourFox?tab=readme-ov-file#regular-browsing-mode))
 - DRM components fail _(no Netflix, Disney Plus, etc.)_
 - Firefox Sync does not work
 - Picture-in-Picture Mode (causes Firefox to crash)
 - Built-in Translations feature (causes Firefox to crash)
-- More troubleshooting information (`about:support`) crashes on 122+
-
-
-### Important Setup Instructions:
-
-- Create the directory `C:\AppContainer`
-- Extract the 7z archive from Releases into the `C:\AppContainer` directory
-- Directory structure absolutely must be as follows:
-```batch
-C:\AppContainer
-   ├───AppExec
-   ├───Downloads
-   └───Firefox
-       ├───bin
-       └───profile
-```
-- There is a `user.js` file in the `profile` folder which is absolutely critical for running as AppContainer
-- Before first run, you must run `SetACLs.bat` to set the AppContainer ACLs _(you only need to do this once)_
-- Now you can run Firefox in AppContainer by running `firefox.bat` or the included Firefox shortcut
-- For additional security, you can also apply Process Mitigations [below](https://github.com/WildByDesign/SandboxYourFox?tab=readme-ov-file#apply-process-mitigations)
-
-
-### Apply Process Mitigations:
-
-- Process Mitigations can be applied with the included `ProcessMitigations.xml` and `SetProcessMitigations.bat`
-- Simply run `SetProcessMitigations.bat` which will request Admin and apply the process mitgations
-- These process mitigations will NOT affect your installed version of Firefox (if you have Firefox installed)
-- Most of the process mitigations that Firefox applies to their content processes [Firefox Sandbox](https://wiki.mozilla.org/Security/Sandbox#Content) are applied
-- In addition, I have applied the [Disable Child Processes](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/exploit-protection-reference?view=o365-worldwide#dont-allow-child-processes) mitigation since SandboxYourFox is single-process only
 
 
 ### Regular Browsing Mode:
 
 Regular browsing mode (caching, history, cookies, etc.) for the first several years of this project had always crashed. This was due to a Shared Web Content process that was started even with Fission disabled.
 
-Recently, I have discovered that there is a way to use regular browsing mode with SandboxYourFox that remembers your browsing session to session. SandboxYourFox absolutely must be started in Private Browsing mode to avoid the Shared Web Content process. From there, you can open a regular New tab and this will deal with your sessions (caching, history, cookies, etc.) as per normal and no Shared Web Content process is started using this method.
+Recently, I have discovered that there is a way to use regular browsing mode with SandboxYourFox that remembers your browsing session to session. SandboxYourFox absolutely must be started in Private Browsing mode to avoid the Shared Web Content process. From there, you can open a regular New tab (`New window`) and this will deal with your sessions (caching, history, cookies, etc.) as per normal and no Shared Web Content process is started using this method.
