@@ -5,6 +5,7 @@
 ### Important Changes in 130.0.0 supersedes some info on this README:
 
 - Custom-made Installer and Uninstaller for easy testing and smooth upgrades
+- Firefox Process Mitigations are set with the installer
 - Changed directories for binaries and profile for better ACL management:
   - Binaries are installed to: `%PROGRAMFILES%\SandboxYourFox`
   - Profile directory: `%LOCALAPPDATA%\Packages\appcontainer.launcher\AC\Profile`
