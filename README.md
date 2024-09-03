@@ -40,6 +40,11 @@ This runs Firefox within an AppContainer (LPAC) with it's own profile that is co
 - Built-in Translations feature (causes Firefox to crash)
 
 
+### SetAppContainerACL:
+
+SetAppContainerACL program coming soon.
+
+
 ### Regular Browsing Mode:
 
 Regular browsing mode (caching, history, cookies, etc.) for the first several years of this project had always crashed. This was due to a Shared Web Content process that was started even with Fission disabled.
