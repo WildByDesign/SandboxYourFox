@@ -17,6 +17,7 @@
   - `%APPDATA%\Mozilla`
   - `%LOCALAPPDATA%\Mozilla`
   - `HKEY_CURRENT_USER\Software\Mozilla`
+- Added SetAppContainerACL program for setting file system and registry ACL permissions
 
 ### Summary:
 
@@ -42,7 +43,24 @@ This runs Firefox within an AppContainer (LPAC) with it's own profile that is co
 
 ### SetAppContainerACL:
 
-SetAppContainerACL program coming soon.
+SetAppContainerACL program is located `%PROGRAMFILES%\SandboxYourFox\SetAppContainerACL.exe`.
+
+This will set ACL permissions specifically (and only) for `AppContainer.Launcher` which is associated with the following SID:
+`S-1-15-2-3573185071-1305232710-3586399557-853445500-2893132591-3326066854-537196996`
+
+You may decide that you need Firefox to access other files, directories or registry keys which are not accessible to LPAC processes by default. That is what this tool is for.
+
+Usage Examples:
+```
+C:\Example
+C:\Example\Example.txt
+C:\Program Files\Example
+Registry::CURRENT_USER\Software\Example
+Registry::LOCAL_MACHINE\SOFTWARE\Example
+```
+Important:
+
+Please remember that setting ACL permissions on certain directories (eg. `C:\Program Files` and `C:\Windows`) and registry keys (eg. `HKEY_LOCAL_MACHINE`) require running SetAppContainerACL as Admin.
 
 
 ### Regular Browsing Mode:
