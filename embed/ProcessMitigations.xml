@@ -2,13 +2,13 @@
 <MitigationPolicy>
   <AppConfig Executable="C:\Program Files\SandboxYourFox\Firefox\firefox.exe">
     <DEP Enable="true" EmulateAtlThunks="false" />
-    <ASLR BottomUp="true" HighEntropy="true" />
+    <ASLR ForceRelocateImages="true" RequireInfo="true" BottomUp="true" HighEntropy="true" />
     <ExtensionPoints DisableExtensionPoints="true" />
     <ControlFlowGuard Enable="true" SuppressExports="false" />
     <Fonts DisableNonSystemFonts="true" AuditOnly="false" Audit="false" />
-    <ImageLoad BlockRemoteImageLoads="true" AuditRemoteImageLoads="false" BlockLowLabelImageLoads="true" AuditLowLabelImageLoads="false" />
+    <ImageLoad BlockRemoteImageLoads="true" AuditRemoteImageLoads="false" BlockLowLabelImageLoads="true" AuditLowLabelImageLoads="false" PreferSystem32="true" />
     <SEHOP Enable="true" TelemetryOnly="false" />
     <Heap TerminateOnError="true" />
     <ChildProcess DisallowChildProcessCreation="true" Audit="false" />
-  </AppConfig>  
+  </AppConfig>
 </MitigationPolicy>
