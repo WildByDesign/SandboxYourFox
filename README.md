@@ -68,3 +68,12 @@ Please remember that setting ACL permissions on certain directories (eg. `C:\Pro
 Regular browsing mode (caching, history, cookies, etc.) for the first several years of this project had always crashed. This was due to a Shared Web Content process that was started even with Fission disabled.
 
 Recently, I have discovered that there is a way to use regular browsing mode with SandboxYourFox that remembers your browsing session to session. SandboxYourFox absolutely must be started in Private Browsing mode to avoid the Shared Web Content process. From there, you can open a regular New tab (`New window`) and this will deal with your sessions (caching, history, cookies, etc.) as per normal and no Shared Web Content process is started using this method.
+
+
+### Policies.7z
+
+Contains: 
+- `distribution.ini` which sets EME-free mode
+- `policies.json` which disables updates and sets Downloads directory
+- `channel-prefs.js` which sets the update channel (updates not used anyway)
+- `syspref.js` which contains most prefs that SandboxYourFox needs to function
