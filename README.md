@@ -2,7 +2,7 @@
 ## Less Privileged AppContainer (LPAC) Sandbox for Firefox
 ### _AppContainer Isolation | Faster Firefox | Secure Firefox_
 
-### Important Changes in 130.0.0 supersedes some info on this README:
+### Recent Changes in 130.0.0+:
 
 - Custom-made Installer and Uninstaller for easy testing and smooth upgrades
 - Firefox Process Mitigations are set with the installer
@@ -39,6 +39,22 @@ This runs Firefox within an AppContainer (LPAC) with it's own profile that is co
 - Firefox Sync does not work
 - Picture-in-Picture Mode (causes Firefox to crash)
 - Built-in Translations feature (causes Firefox to crash)
+
+### How To Install:
+
+Simply run the installer from the latest release. It will take care of everything needed.
+
+
+### How To Upgrade:
+
+You don't need to uninstall before upgrading. Just run the latest installer. It will remove the older release files and install the newer version.
+
+
+### How To Uninstall:
+
+Run the uninstaller directly from: `%PROGRAMFILES%\SandboxYourFox\Uninstall.exe`
+
+The uninstaller will first ask if you want to uninstall SandboxYourFox program files. Then it will ask if you want to remove your Profile as well. This gives the opportunity to keep your Profile when uninstalling just in case it is still needed later.
 
 
 ### SetAppContainerACL:
