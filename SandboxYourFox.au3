@@ -1,13 +1,14 @@
+#NoTrayIcon
 
-#include <ExtMsgBox.au3>
+#include "includes\ExtMsgBox.au3"
 
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Icon=firefox.ico
 #AutoIt3Wrapper_Res_Icon_Add=firefox.ico
 #AutoIt3Wrapper_UseX64=y
 #AutoIt3Wrapper_Res_Description=SandboxYourFox
-#AutoIt3Wrapper_Res_Fileversion=131.0.0.0
-#AutoIt3Wrapper_Res_ProductVersion=131.0.0
+#AutoIt3Wrapper_Res_Fileversion=131.0.3.0
+#AutoIt3Wrapper_Res_ProductVersion=131.0.3
 #AutoIt3Wrapper_Res_ProductName=SandboxYourFox
 #AutoIt3Wrapper_Res_LegalCopyright=@ 2024 WildByDesign
 #AutoIt3Wrapper_Res_Language=1033
