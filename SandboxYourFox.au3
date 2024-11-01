@@ -40,6 +40,10 @@ If $CmdLine[1] = "setacl" Then
 	Exit
 EndIf
 
+If $CmdLine[1] = "init" Then
+	Exit
+EndIf
+
 Func NoSandbox()
 
 $firefoxbin = @ProgramFilesDir & "\SandboxYourFox\Firefox\firefox.exe"

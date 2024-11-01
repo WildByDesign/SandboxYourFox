@@ -140,6 +140,52 @@ If $LaunchAppContainer Then FileInstall(".\embed\LaunchAppContainer.exe", @Progr
 If $SetAppContainerACL Then FileInstall(".\embed\SetAppContainerACL.exe", @ProgramFilesDir & "\SandboxYourFox\SetAppContainerACL.exe")
 If $SandboxYourFox Then FileInstall(".\SandboxYourFox.exe", @ProgramFilesDir & "\SandboxYourFox\SandboxYourFox.exe")
 If $Uninstall Then FileInstall(".\Uninstall.exe", @ProgramFilesDir & "\SandboxYourFox\Uninstall.exe")
+Sleep(1000)
+EndFunc
+
+ACDirExists()
+Func ACDirExists()
+        Local Const $sFilePath = @LocalAppDataDir & "\Packages\appcontainer.launcher\AC"
+
+		; If the directory exists then don't continue.
+        If FileExists($sFilePath) Then
+                Return False
+        Else
+		AppContainerInit()
+		EndIf
+EndFunc
+
+Func AppContainerInit()
+        Local $iPID = Run(@ComSpec & " /c " & 'LaunchAppContainer.exe -m AppContainer.Launcher -d AppContainer.Launcher -i "SandboxYourFox.exe init"', @ProgramFilesDir & "\SandboxYourFox", @SW_HIDE)
+        Sleep(1000)
+EndFunc
+
+CreateDirProfle()
+Func CreateDirProfle()
+        Local Const $sFilePath = @LocalAppDataDir & "\Packages\appcontainer.launcher\AC\Profile"
+
+        ; If the directory exists then don't continue.
+        If FileExists($sFilePath) Then
+                Return False
+        EndIf
+
+        DirCreate($sFilePath)
+		Sleep(500)
+EndFunc
+
+ExtensionSettings()
+Func ExtensionSettings()
+        Local Const $sFilePath = @LocalAppDataDir & "\Packages\appcontainer.launcher\AC\Profile\extension-preferences.json"
+
+        ; If the file exists then don't continue.
+        If FileExists($sFilePath) Then
+                Return False
+        EndIf
+
+        Local $ExtensionPrefs = True
+		If $ExtensionPrefs Then FileInstall(".\embed\extension-preferences.json", @ProgramFilesDir & "\SandboxYourFox\extension-preferences.json")
+		Sleep(1000)
+		FileCopy(@ProgramFilesDir & "\SandboxYourFox\extension-preferences.json", $sFilePath)
 EndFunc
 
 ExtractFiles()
@@ -221,6 +267,7 @@ Local $iDelete5 = FileDelete(@ProgramFilesDir & "\SandboxYourFox\SetACL.exe")
 Local $iDelete6 = FileDelete(@ProgramFilesDir & "\SandboxYourFox\ProcessMitigations.xml")
 Local $iDelete7 = FileDelete(@ProgramFilesDir & "\SandboxYourFox\Policies.7z")
 Local $iDelete8 = FileDelete(@ProgramFilesDir & "\SandboxYourFox\ACL.7z")
+Local $iDelete9 = FileDelete(@ProgramFilesDir & "\SandboxYourFox\extension-preferences.json")
 EndFunc
 
 Shortcut()
