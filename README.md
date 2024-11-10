@@ -57,6 +57,11 @@ Run the uninstaller directly from: `%PROGRAMFILES%\SandboxYourFox\Uninstall.exe`
 The uninstaller will first ask if you want to uninstall SandboxYourFox program files. Then it will ask if you want to remove your Profile as well. This gives the opportunity to keep your Profile when uninstalling just in case it is still needed later.
 
 
+### Why Aren't The Firefox Binaries Digitally Signed?:
+
+SandboxYourFox uses the `MOZ_FORCE_DISABLE_E10S` environment variable to enable single-process mode which is necessary to run in an AppContainer (without major changes within Firefox code). `MOZ_FORCE_DISABLE_E10S` worked for many years in official builds. But recently, Firefox developers made it so that builds with `MOZILLA_OFFICIAL` set would no longer work with `MOZ_FORCE_DISABLE_E10S`. For `MOZ_FORCE_DISABLE_E10S` to work, the new requirement basically requires a non-official build and therefore no longer works with official Firefox builds. No changes to the actual Firefox source code were required.
+
+
 ### SetAppContainerACL:
 
 SetAppContainerACL program is located `%PROGRAMFILES%\SandboxYourFox\SetAppContainerACL.exe`.
