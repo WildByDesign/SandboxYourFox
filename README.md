@@ -57,6 +57,23 @@ Run the uninstaller directly from: `%PROGRAMFILES%\SandboxYourFox\Uninstall.exe`
 The uninstaller will first ask if you want to uninstall SandboxYourFox program files. Then it will ask if you want to remove your Profile as well. This gives the opportunity to keep your Profile when uninstalling just in case it is still needed later.
 
 
+### SandboxYourFox.exe Command Lines:
+
+I created the `SandboxYourFox.exe` binary as a CLI binary so that I could use it for troubleshooting at times. Sometimes a new version of Firefox comes out and has various issues running in LPAC depending on what has changed. So here are some command lines that assist me in this troubleshooting:
+
+Running `SandboxYourFox.exe` with no command line passed:
+- runs Firefox in LPAC (Less Privileged AppContainer) in single-process mode
+
+`SandboxYourFox.exe sandbox`
+- runs Firefox in LPAC (Less Privileged AppContainer) in single-process mode
+
+`SandboxYourFox.exe nosandbox`
+- runs Firefox in single-process mode with no sandbox
+
+`SandboxYourFox.exe e10s`
+- runs Firefox in multi-process mode (e10s) like standard Firefox
+
+
 ### Why Aren't The Firefox Binaries Digitally Signed?:
 
 SandboxYourFox uses the `MOZ_FORCE_DISABLE_E10S` environment variable to enable single-process mode which is necessary to run in an AppContainer (without major changes within Firefox code). `MOZ_FORCE_DISABLE_E10S` worked for many years in official builds. But recently, Firefox developers made it so that builds with `MOZILLA_OFFICIAL` set would no longer work with `MOZ_FORCE_DISABLE_E10S`. For `MOZ_FORCE_DISABLE_E10S` to work, the new requirement basically requires a non-official build and therefore no longer works with official Firefox builds. No changes to the actual Firefox source code were required.
