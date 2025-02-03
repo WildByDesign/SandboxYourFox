@@ -7,10 +7,10 @@
 #AutoIt3Wrapper_Res_Icon_Add=firefox.ico
 #AutoIt3Wrapper_UseX64=y
 #AutoIt3Wrapper_Res_Description=SandboxYourFox
-#AutoIt3Wrapper_Res_Fileversion=134.0.2.0
-#AutoIt3Wrapper_Res_ProductVersion=134.0.2
+#AutoIt3Wrapper_Res_Fileversion=135.0.0
+#AutoIt3Wrapper_Res_ProductVersion=135.0.0
 #AutoIt3Wrapper_Res_ProductName=SandboxYourFox
-#AutoIt3Wrapper_Res_LegalCopyright=@ 2024 WildByDesign
+#AutoIt3Wrapper_Res_LegalCopyright=@ 2025 WildByDesign
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Res_HiDpi=P
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
