@@ -1,3 +1,12 @@
+# NOTICE: 
+## This project is on hold. Since version 138 it has become impossible to build Firefox with 32GB of RAM.
+```
+rustc-LLVM ERROR: out of memory
+Allocation failed
+error: could not compile `gkrust` (lib)
+```
+I've seen reports of this error with 2TB of RAM as well. None of these reports have found a solution.
+
 # Sandbox Your Fox
 ## Less Privileged AppContainer (LPAC) Sandbox for Firefox
 ### _AppContainer Isolation | Faster Firefox | Secure Firefox_
