@@ -124,3 +124,40 @@ Contains:
 - `policies.json` which disables updates and sets Downloads directory
 - `channel-prefs.js` which sets the update channel (updates not used anyway)
 - `syspref.js` which contains most prefs that SandboxYourFox needs to function
+
+
+### Change To Firefox Source Code:
+
+There is only one change to Firefox source code that was required to allow disabling E10s (multi-process).
+
+Replaced:
+``` cpp
+// toolkit/xre/nsAppRunner.cpp
+  gBrowserTabsRemoteAutostart = true;
+  E10sStatus status = kE10sEnabledByDefault;
+
+  // We are checking to ensure that either MOZILLA_OFFICIAL is undefined or that
+  // xpc::AreNonLocalConnectionsDisabled() is true. If either check matches,
+  // we move on to check the MOZ_FORCE_DISABLE_E10S environment variable which
+  // must equal "1" to proceed with disabling e10s.
+  #if defined(MOZILLA_OFFICIAL)
+    bool allowDisablingE10s = xpc::AreNonLocalConnectionsDisabled();
+  #else
+    bool allowDisablingE10s = true;
+  #endif
+
+  if (gBrowserTabsRemoteAutostart && allowDisablingE10s) {
+    const char* forceDisable = PR_GetEnv("MOZ_FORCE_DISABLE_E10S");
+    if (forceDisable && !strcmp(forceDisable, "1")) {
+      gBrowserTabsRemoteAutostart = false;
+      status = kE10sForceDisabled;
+    }
+  }
+```
+With:
+``` cpp
+// toolkit/xre/nsAppRunner.cpp
+  // Bypass my previous patch that prevented disabling E10s if MOZILLA_OFFICIAL=1
+  gBrowserTabsRemoteAutostart = false;
+  E10sStatus status = kE10sForceDisabled;
+```
